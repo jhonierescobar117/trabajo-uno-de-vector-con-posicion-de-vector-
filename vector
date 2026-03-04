@@ -1,11 +1,32 @@
-import java.util.Scanner;
-
-public class vectores {
+public class AnalisisVectorFijo {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+       
+        int[] vector = {15, 8, 45, 2, 33, 10, 5, 60, 21, 12};
 
-    int vector1 []; new int [10];
-    int cantidadregresada= 0;
+   
+        int mayor = vector[0];
+        int menor = vector[0];
+        int posMayor = 0;
+        int posMenor = 0;
+
+        
+        for (int i = 1; i < vector.length; i++) {
+            if (vector[i] > mayor) {
+                mayor = vector[i];
+                posMayor = i;
+            }
+            if (vector[i] < menor) {
+                menor = vector[i];
+                posMenor = i;
+            }
+        }
+
+        
+        System.out.println("Vector analizado: ");
+        for (int num : vector) System.out.print(num + " ");
+        
+        System.out.println("\n\n--- Resultados ---");
+        System.out.println("El número mayor es: " + mayor + " (Posición " + posMayor + ")");
+        System.out.println("El número menor es: " + menor + " (Posición " + posMenor + ")");
     }
-    
 }
